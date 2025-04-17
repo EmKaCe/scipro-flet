@@ -5,12 +5,48 @@ description = ""
 readme = "README.md"
 requires-python = ">=3.12,<4.0"
 authors = [
-    { name = "Flet developer", email = "you@example.com" }
+    { name = "Karl Kirschner", email = "38645898+karlkirschner@users.noreply.github.com" },
+    { name = "Emre Çetin", email = "20030146+EmKaCe@users.noreply.github.com" }
 ]
 dependencies = [
   "flet==0.27.6"
 ]
 
+# Poetry configuration
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.group.dev.dependencies]
+flet = {extras = ["all"], version = "0.27.6"}
+taskipy = "^1.14.1"
+black = "^25.1.0"
+
+[tool.uv]
+dev-dependencies = [
+    "flet[all]==0.27.6",
+]
+
+# Black configuration
+[tool.black]
+line-length = 90
+target-version = ["py312", "py313"]
+include = ".py$"
+exclude = """
+    (
+        build
+        |dist
+        |.eggs
+        |.git
+        |__pycache__
+        |.pytest_cache
+        |.mypy_cache
+        |.venv
+        |.vscode
+        |.idea
+    )
+"""
+
+# Flet configuration
 [tool.flet]
 # org name in reverse domain name notation, e.g. "com.mycompany".
 # Combined with project.name to build bundle ID for iOS and Android apps
@@ -29,17 +65,7 @@ copyright = "Copyright (C) 2025 by Flet"
 [tool.flet.app]
 path = "src"  
 
-[tool.uv]
-dev-dependencies = [
-    "flet[all]==0.27.6",
-]
-
-[tool.poetry]
-package-mode = false
-
+# Taskipy configuration
 [tool.taskipy.tasks]
-dev = "flet run --web"
-
-[tool.poetry.group.dev.dependencies]
-flet = {extras = ["all"], version = "0.27.6"}
-taskipy = "^1.14.1"
+dev = "flet run --web -d -r main.py"
+build = "flet build web"

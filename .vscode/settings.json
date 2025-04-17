@@ -1,0 +1,11 @@
+{
+    "[python]": {
+        "editor.formatOnSave": true, // Format on save
+        "editor.defaultFormatter": "ms-python.black-formatter" // Use Black formatter
+    },
+    "black-formatter.importStrategy": "fromEnvironment", // Use the environment's Python interpreter to find the Black formatter
+    // autoDocstring settings
+    "autoDocstring.docstringFormat": "google", // Google instead of PEP 257 because it has better support for type hints
+    "autoDocstring.quoteStyle": "\"\"\"", // Triple double quotes
+    "autoDocstring.startOnNewLine": true // Start on a new line
+}

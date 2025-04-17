@@ -1,0 +1,21 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=827846 to learn about workspace recommendations.
+	// Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
+
+	// List of extensions which should be recommended for users of this workspace.
+	"recommendations": [
+		"njpwerner.autodocstring", // AutoDocstring is optional, but recommended for better docstring generation
+		"ms-python.black-formatter", // Black formatter is required for formatting
+		"github.copilot", // GitHub Copilot is optional, but recommended for better code completion
+		"github.copilot-chat", // GitHub Copilot Chat is optional, but recommended for better code completion
+		"ms-python.vscode-pylance",
+		"ms-python.python", // Python extension is required for Python development
+		"ms-python.debugpy",
+		"gruntfuggly.todo-tree" // Todo Tree is optional, but highly recommended for better code management
+		
+	],
+	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
+	"unwantedRecommendations": [
+		
+	]
+}
